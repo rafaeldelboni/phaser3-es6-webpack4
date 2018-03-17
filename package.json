@@ -6,8 +6,8 @@
   "license": "MIT",
   "homepage": "https://github.com/rafaeldelboni/phaser3-es6-webpack4.git",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
-    "build": "webpack --progress --mode production --config webpack.config.build.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack/config.dev.js",
+    "build": "webpack --progress --mode production --config webpack/config.build.js",
     "lint": "eslint ./src/**/*.js"
   },
   "repository": {

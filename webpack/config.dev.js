@@ -1,5 +1,5 @@
-const merge = require('webpack-merge');
-const webpackConfig = require('./webpack.config');
+const merge = require('webpack-merge')
+const webpackConfig = require('./config')
 
 module.exports = merge(webpackConfig, {
   devtool: 'eval',
@@ -13,4 +13,4 @@ module.exports = merge(webpackConfig, {
   devServer: {
     port: 3000
   }
-});
+})

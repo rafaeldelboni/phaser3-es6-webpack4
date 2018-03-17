@@ -1,15 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Is the current build a development build
-const IS_DEV = (process.env.NODE_ENV === 'dev');
+const IS_DEV = (process.env.NODE_ENV === 'dev')
 
-const dirNode = 'node_modules';
-const dirApp = path.join(__dirname, 'src');
-const dirAssets = path.join(__dirname, 'assets');
+const dirNode = 'node_modules'
+const dirApp = path.join(__dirname, '../src')
+const dirAssets = path.join(__dirname, '../assets')
 
-const appHtmlTitle = 'Webpack4 Phaser3 Boilerplate';
+const appHtmlTitle = 'Webpack4 Phaser3 Boilerplate'
 
 /**
  * Webpack Configuration
@@ -35,7 +35,7 @@ module.exports = {
       'WEBGL_RENDERER': JSON.stringify(true)
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.ejs'),
+      template: path.join(__dirname, '../index.ejs'),
       title: appHtmlTitle
     })
   ],
@@ -60,7 +60,7 @@ module.exports = {
             options: {
               sourceMap: IS_DEV
             }
-          },
+          }
         ]
       },
       // CSS / SASS
@@ -98,4 +98,4 @@ module.exports = {
       }
     ]
   }
-};
+}
