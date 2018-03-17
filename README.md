@@ -11,7 +11,7 @@ Navigate into your workspace directory.
 
 Run:
 ```sh
-$ git clone https://github.com/rafaeldelboni/phaser3-es6-webpack4.git`
+$ git clone https://github.com/rafaeldelboni/phaser3-es6-webpack4.git
 ```
 ### 2. Install node.js and [yarn](https://yarnpkg.com/):
 https://nodejs.org/en/
