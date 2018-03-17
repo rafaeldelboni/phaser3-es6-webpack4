@@ -1,37 +1,38 @@
-Webpack 4 Boilerplate
+Phaser3 Es6 Webpack4 Boilerplate
 ===========
 
-[![Dependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate) 
-[![devDependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate/dev-status.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate)
-
-> Plain webpack 4 boilerplate with Babel, SASS and lodash on board
-
-## Requirements
-You only need <b>node.js</b> pre-installed and you’re good to go. 
-
-If you don’t want to work with lodash, just remove it from the node packages and the webpack config.
-
-## Download
-Download in current directory
-```sh
-$ curl -L -o master.zip https://github.com/cvgellhorn/webpack-boilerplate/archive/master.zip && unzip master.zip && rm master.zip && mv ./webpack-boilerplate-master/{.,}* ./ && rm -r ./webpack-boilerplate-master
-```
+> Plain webpack 4 Boilerplate with Babel, SASS and Phaser3 on board
 
 ## Setup
-Install dependencies
+You'll need to install a few things before you have a working copy of the project.
+
+### 1. Clone this repo:
+Navigate into your workspace directory.
+
+Run:
 ```sh
-$ npm install
+$ git clone https://github.com/rafaeldelboni/phaser3-es6-webpack4.git`
+```
+### 2. Install node.js and [yarn](https://yarnpkg.com/):
+https://nodejs.org/en/
+
+### 3. Install dependencies:
+Navigate to the cloned repo's directory.
+
+Run:
+```sh
+$ yarn
 ```
 
 ## Development
-Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
+Run the local webpack-dev-server with livereload and autocompile on [http://localhost:3000/](http://localhost:3000/)
 ```sh
-$ npm run dev
+$ yarn dev
 ```
 ## Deployment
 Build the current application
 ```sh
-$ npm run build
+$ yarn build
 ```
 
 ## [webpack](https://webpack.js.org/)
