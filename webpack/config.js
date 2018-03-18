@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev')
 
-const dirNode = 'node_modules'
+const dirNode = path.join(__dirname, '../node_modules')
 const dirApp = path.join(__dirname, '../src')
 const dirAssets = path.join(__dirname, '../assets')
 
@@ -16,10 +16,8 @@ const appHtmlTitle = 'Webpack4 Phaser3 Boilerplate'
  */
 module.exports = {
   entry: {
-    vendor: [
-      'phaser'
-    ],
-    bundle: path.join(dirApp, 'index')
+    bundle: path.join(dirApp, 'index.js'),
+    vendor: ['phaser']
   },
   resolve: {
     modules: [
@@ -45,7 +43,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /(node_modules)/,
+        include: dirApp,
+        exclude: dirNode,
         options: {
           compact: true
         }
@@ -53,6 +52,8 @@ module.exports = {
       // STYLES
       {
         test: /\.css$/,
+        include: dirAssets,
+        exclude: dirNode,
         use: [
           'style-loader',
           {
@@ -66,6 +67,8 @@ module.exports = {
       // CSS / SASS
       {
         test: /\.scss/,
+        include: dirAssets,
+        exclude: dirNode,
         use: [
           'style-loader',
           {
@@ -77,8 +80,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: IS_DEV,
-              includePaths: [dirAssets]
+              sourceMap: IS_DEV
             }
           }
         ]
@@ -87,6 +89,8 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif)$/,
         loader: 'file-loader',
+        include: dirAssets,
+        exclude: dirNode,
         options: {
           name: '[path][name].[ext]'
         }
@@ -97,5 +101,11 @@ module.exports = {
         use: 'raw-loader'
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'all'
+    }
   }
 }

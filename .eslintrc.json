@@ -8,9 +8,6 @@
   "env": {
     "browser": true
   },
-  "rules": {
-    "import/no-unresolved": [2]
-  },
   "globals": {
     "Phaser": true
   },
